@@ -22,3 +22,7 @@ I2C pins on Nano ( see https://www.jetsonhacks.com/2019/07/22/jetson-nano-using-
 * I2C Bus 1 SCL is on Pin 5
 * I2C Bus 0 SDA is on Pin 27
 * I2C Bus 0 SCL is on Pin 28
+
+I2C pins on Romi
+* I2C Bus 1? SDA is on Pin 37
+* I2C Bus 1? SCL is on Pin 35
