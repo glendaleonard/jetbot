@@ -16,6 +16,10 @@ Building and using JetBot gives the hands on experience needed to create entirel
 
 To get started, read the [JetBot Wiki](https://github.com/NVIDIA-AI-IOT/jetbot/wiki).
 
+**To install any code updates run:**
+sudo python3 setup.py install
+ 
+
 ## Jetson Nano with Romi 32U4
 I2C pins on Nano ( see https://www.jetsonhacks.com/2019/07/22/jetson-nano-using-i2c/ )
 * I2C Bus 0 SDA is on Pin 27
