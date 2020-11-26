@@ -10,7 +10,7 @@ class RobotAStar(SingletonConfigurable):
         super(RobotAStar, self).__init__(*args, **kwargs)
 
     def set_motors(self, left_speed, right_speed):
-        self.a_star.motors(min(left_speed, 1) * 400, min(right_speed, 1) * 400)
+        self.a_star.motors(int(min(left_speed, 1) * 400), int(min(right_speed, 1) * 400))
         
     def forward(self, speed=1.0, duration=None):
         self.set_motors(speed, speed)
