@@ -3,7 +3,7 @@ import traitlets
 import atexit
 import logging
 from jetbot import AStar
-
+import sys
 
 class RobotAStar(SingletonConfigurable):
     a_star = AStar()
@@ -43,15 +43,15 @@ class MotorSpeed(Configurable):
 
     @traitlets.observe('l_value')
     def _observe_value_left(self, change):
+        logging.basicConfig(stream=sys.stdout, level=logging.INFO)
         logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)
         logging.info("Updating l_value: " + str(change['new']) + " using existing r_value: " + str(self.r_value))
         self._write_value(change['new'], self.r_value)
 
     @traitlets.observe('r_value')
     def _observe_value_right(self, change):
+        logging.basicConfig(stream=sys.stdout, level=logging.INFO)
         logger = logging.getLogger()
-        logger.setLevel(logging.DEBUG)
         logging.info("Updating r_value: " + str(change['new']) + " using existing l_value: " + str(self.l_value))
         self._write_value(self.l_value, change['new'])
 
