@@ -35,6 +35,9 @@ class MotorSpeed(Configurable):
     l_value = traitlets.Float()
     r_value = traitlets.Float()
 
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+
     def __init__(self, astar, *args, **kwargs):
         super(MotorSpeed, self).__init__(*args, **kwargs)  # initializes traitlets
         self._astar = astar
