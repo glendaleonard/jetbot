@@ -59,10 +59,10 @@ class MotorSpeed(Configurable):
 
 class RobotAStarWithTrait(SingletonConfigurable):
     motor_speed = traitlets.Instance(MotorSpeed)
+    a_star = AStar()
 
     def __init__(self, *args, **kwargs):
         super(RobotAStarWithTrait, self).__init__(*args, **kwargs)
-        a_star = AStar()
         self.motor_speed = MotorSpeed(a_star)
 
     def forward(self, speed=1.0, duration=None):
@@ -79,3 +79,6 @@ class RobotAStarWithTrait(SingletonConfigurable):
 
     def stop(self):
         self.set_motors(0, 0)
+
+    def set_motors(self, left_speed, right_speed):
+        self.a_star.motors(int(min(left_speed, 1) * 400), int(min(right_speed, 1) * 400))
