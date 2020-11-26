@@ -63,7 +63,7 @@ class RobotAStarWithTrait(SingletonConfigurable):
 
     def __init__(self, *args, **kwargs):
         super(RobotAStarWithTrait, self).__init__(*args, **kwargs)
-        self.motor_speed = MotorSpeed(a_star)
+        self.motor_speed = MotorSpeed(self.a_star)
 
     def forward(self, speed=1.0, duration=None):
         self.set_motors(speed, speed)
