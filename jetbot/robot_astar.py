@@ -1,7 +1,7 @@
 from traitlets.config.configurable import SingletonConfigurable, Configurable
 import traitlets
 import atexit
-
+import logging
 from jetbot import AStar
 
 
@@ -43,10 +43,12 @@ class MotorSpeed(Configurable):
 
     @traitlets.observe('l_value')
     def _observe_value(self, change):
+        logging.info("Updating l_value: " + str(change['new']) + " using existing r_value: " + str(self.r_value))
         self._write_value(change['new'], self.r_value)
 
     @traitlets.observe('r_value')
     def _observe_value(self, change):
+        logging.info("Updating r_value: " + str(change['new']) + " using existing l_value: " + str(self.l_value))
         self._write_value(self.l_value, change['new'])
 
     def _write_value(self, left_speed, right_speed):
