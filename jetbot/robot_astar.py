@@ -61,7 +61,7 @@ class RobotAStarWithTrait(SingletonConfigurable):
     motor_speed = traitlets.Instance(MotorSpeed)
 
     def __init__(self, *args, **kwargs):
-        super(RobotAStar, self).__init__(*args, **kwargs)
+        super(RobotAStarWithTrait, self).__init__(*args, **kwargs)
         a_star = AStar()
         self.motor_speed = MotorSpeed(a_star)
 
