@@ -45,6 +45,8 @@ Nano Pin|Romi Pin|Description
 3|37|SDA
 5|35|SCL
 
+See /images for wiring examples.
+
 ## OLED System Status Display
 python code (located in cron directory) is configured to run on reboot in the crontab for the jetson user\
 ```@reboot /home/jetson/jetbot/cron/stats-oled-display.sh```
